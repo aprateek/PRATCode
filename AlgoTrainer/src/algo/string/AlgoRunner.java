@@ -1,5 +1,6 @@
 package algo.string;
 
+// this class will run my algos
 public class AlgoRunner {
 	
 	
