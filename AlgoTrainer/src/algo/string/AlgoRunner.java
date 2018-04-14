@@ -10,8 +10,7 @@ public class AlgoRunner {
 		String source = "ABphBBCDBE";
 		String pattern = "BB";
 		System.out.println(StringAlgos.findIndexOfPatern(source, pattern));
-		
-		
+			
 
 	}
 
