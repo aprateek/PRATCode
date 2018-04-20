@@ -1,5 +1,7 @@
 package prat.classapp.instructor;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;
@@ -12,10 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class InstructorCtrl {
+	
 	@Autowired
 	private InstRepo instRepo;
-
-	Instructor inst = new Instructor();
+	private static final Logger logger = LogManager.getLogger(InstructorCtrl.class);
+	//Instructor inst = new Instructor();
 
 	@RequestMapping(value = "/")
 	public String index() {
@@ -28,8 +31,8 @@ public class InstructorCtrl {
 		 
 
 		String name = instRepo.findByid(id).getFirstName();
-		System.out.println("Instructor  Page" +  name);
-
+		 
+		 logger.info("Instructor  Page" +  name);
 		return name;
 
 	}
