@@ -1,4 +1,4 @@
-package prat.classapp.instructor;
+package prat.classapp.student;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

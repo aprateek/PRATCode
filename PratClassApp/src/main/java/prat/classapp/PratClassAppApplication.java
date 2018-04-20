@@ -1,4 +1,4 @@
-package prat.classapp.instructor;
+package prat.classapp;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -8,9 +8,11 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import prat.classapp.instructor.InstructorCtrl;
+
 @SpringBootApplication
 @EnableAutoConfiguration
-@ComponentScan(basePackageClasses=InstructorCtrl.class)
+@ComponentScan(basePackages="prat.classapp.*")
 //@EnableJpaRepositories("prat.classapp.instructor")
 //@EntityScan("prat.classapp.instructor")
 public class PratClassAppApplication {

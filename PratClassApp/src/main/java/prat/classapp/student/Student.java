@@ -1,4 +1,4 @@
-package prat.classapp.instructor;
+package prat.classapp.student;
 
  
 import java.text.ParseException;
