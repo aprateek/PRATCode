@@ -18,7 +18,7 @@ public class InstructorCtrl {
 	@Autowired
 	private InstRepo instRepo;
 	private static final Logger logger = LogManager.getLogger(InstructorCtrl.class);
-	//Instructor inst = new Instructor();
+	 
 
 	@RequestMapping(value = "/")
 	public String index() {
@@ -27,11 +27,9 @@ public class InstructorCtrl {
 	}
 
 	@RequestMapping(value = "/inst/{id}")
-	public @ResponseBody String show(@RequestParam String id) {
-		 
-
-		String name = instRepo.findByid(id).getFirstName();
-		 
+	public @ResponseBody String show(@RequestParam int id) {
+		
+		String name = instRepo.findByInstID(id).getFirstName();
 		 logger.info("Instructor  Page" +  name);
 		return name;
 
