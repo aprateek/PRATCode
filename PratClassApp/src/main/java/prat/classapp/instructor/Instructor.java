@@ -1,12 +1,16 @@
 package prat.classapp.instructor;
 
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+
+import prat.classapp.classes.Classes;
 
 @Entity
 public class Instructor {
@@ -33,6 +37,34 @@ public class Instructor {
 	private Date createDate;
 	private Date updateDate;
 	private String updateBy;
+	
+	//==============================
+
+	@ManyToMany(mappedBy = "instructors")
+	private Set<Classes> classes;
+	
+	public Instructor(){
+
+    }
+
+    public Instructor(String name){
+        this.instFirstName = name;
+    }
+
+    public Instructor(String name, Set<Classes> classes){
+        this.instFirstName = name;
+        this.classes = classes;
+    }
+	
+	
+	public Set<Classes> getClasses() {
+        return classes;
+    }
+
+    public void setClasses (Set<Classes> classes) {
+        this.classes = classes;
+    }
+    //==============================
 
 	public String getFirstName() {
 		return instFirstName;
